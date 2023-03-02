@@ -44,12 +44,42 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
-  
+    <script>
+      window.onload=function(){
+        document.getElementById('loader').style.display="none";
+        document.getElementById('content').style.display="block";
+      };
+      </script>
+    <style>
+      #content{display:none;}
+      /*#content img{width:100%;}*/
+      #loader{
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 80%;
+        height: 80vh;
+      }
+      #loader img{width:400px;}
+      #timeincrease{
+        display:none;
+      }
+      video::-webkit-media-controls {
+       display: none;
+      }
+      </style>
   
   
   </head>
 
   <body>
+    <div id="loader">
+			<video height="100%" width="100%" autoplay loop muted controls src="./videos/RWF Preloader.mp4"></video>
+		</div>
+    <div id="content">
     <header>
       <section class="section-1">
         <img src="Website Header Strip.png" alt="" style="align-items: center; width: 100%;">
@@ -376,7 +406,10 @@
         </div>
       </nav>
     </header>
-
+    <div id="timeincrease" >
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/-QKgzYTPSEo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/-QKgzYTPSEo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+     </div>
     <div
       id="carouselExampleIndicators"
       class="carousel slide"
@@ -1123,7 +1156,7 @@
   <footer class="padding_3x">
     <div class="flex">
       <section class="flex-content padding_1x">
-        <h3>About the company</h3>
+        <h3>About the Company</h3>
         <div class="about-company">
           <p>A Section 8 Company (Non Profit Organization) under Companies Act 2013, Ministry of Corporate Affairs, Govt. of INDIA.</p>
         <p>GSTIN 04AAJCR5020K1ZH</p>
@@ -1162,7 +1195,7 @@
       </section>
     </div>
   </footer>
-
+</div>
     <script src="index.js"></script>
 
 

@@ -64,8 +64,71 @@ if(isset($_POST["submit"])){
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
     integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <style>
+    .form-box{
+      top:80%;
+      left:50%;
+      position:absolute;
+      transform: translate(-50%,-50%);
+      
+    }
+    .button-box {
 
+      width: 295px;
+      font-size:30px;
+      margin: 10px auto;
+      position: relative;
+      border-radius: 30px;
+      background: rgb(0, 0, 0);
+      color:white;
+    }
 
+    .toggle-btn1 {
+      color:white;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      outline: none;
+      position: relative;
+      text-align: center;
+    }
+
+    .toggle-btn2 {
+      color:white;
+      padding-left: 25px;
+      padding-right: 5px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      outline: none;
+      position: relative;
+      text-align: center;
+    }
+
+    #btn {
+      left: 0;
+      top: 0;
+      position: absolute;
+      width: 155px;
+      height: 100%;
+      background: #eb952c;
+      border-radius: 30px;
+      transition: .5s;
+    }
+    a{
+      text-decoration:none;
+      color:white;
+    }
+    a:hover{
+      color:white;
+    }
+  </style>
 </head>
 
 <body>
@@ -298,6 +361,16 @@ if(isset($_POST["submit"])){
 
 
   <img src="survey-subbanner.jpg" class="surveyimg">
+  <div class="form-box">
+    <div class="button-box">
+      <div id="btn"></div>
+      <a href="surveyform.php"><button type="button" class="toggle-btn1" onclick="leftClick()">
+        
+      Survey</button></a>
+      <a href="feedback.php"><button type="button" class="toggle-btn2" onclick="rightClick()">
+        Feedback</button></a>
+    </div>
+  </div>
   <div class="projects survey">
     <div class="survey-heading"> <h2>YOUR TEA TASTE SURVEY FORM</h2></div>
     
@@ -543,7 +616,23 @@ if(isset($_POST["submit"])){
       document.getElementById("age").value = Age;
 
     }
+    </script>
+
+    <script>
+    var btn = document.getElementById('btn')
+
+    function leftClick() {
+      btn.style.left = '0'
+       
+
+    }
+
+    function rightClick() {
+      btn.style.left = '140px'
+     
+    }
   </script>
+  
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
